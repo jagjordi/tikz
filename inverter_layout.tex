@@ -1,0 +1,44 @@
+\begin{tikzpicture}
+
+\filldraw [kthcolorBLUE!80] (-3.5,4.5) rectangle (2.5,3.5);
+\filldraw [kthcolorBLUE!80] (-2.5,3.5) rectangle (-1.5,2.5) node (v1) {};
+\filldraw [kthcolorGREEN] (-2.5,2.5) rectangle (-1.5,0.5);
+\filldraw [kthcolorGRAY!80] (0,0.5) rectangle (v1);
+\filldraw [kthcolorGREEN] (0,2.5) rectangle (1,0.5);
+\filldraw [kthcolorBLUE!80] (0,0.5) rectangle (1,-1.5);
+\filldraw [kthcolorGREEN] (0,-1.5) rectangle (1,-2.5);
+\filldraw [kthcolorGREEN] (-2.5,-1.5) rectangle (-1.5,-2.5);
+\filldraw [kthcolorBLUE!80] (-2.5,-2.5) rectangle (-1.5,-3.5);
+\filldraw [kthcolorBLUE!80] (-3.5,-3.5) rectangle (2.5,-4.5);
+\filldraw [kthcolorGRAY!80] (-1.5,-1.5) rectangle (0,-2.5);
+\filldraw [kthcolorRED] (-1,2.75) rectangle (-0.5,-2.75);
+\filldraw [kthcolorRED!80] (-1,2.5) rectangle (-0.5,0.5);
+\filldraw [kthcolorRED!80] (-1,-1.5) rectangle (-0.5,-2.5);
+\filldraw [kthcolorBLUE!80] (1,0) rectangle (2.5,-1);
+\filldraw [kthcolorGREEN] (-1.25,0) rectangle (-0.25,-1);
+\draw [fill=kthcolorPALE] (-1,-0.25) rectangle (-0.5,-0.75);
+\draw [fill=kthcolorPALE](-1,-0.25) -- (-0.5,-0.75) (-1,-0.75) -- (-0.5,-0.25);
+\filldraw [kthcolorBLUE!80] (-1.25,-1) rectangle (-3.5,0);
+
+\draw [fill=kthcolorPALE] (-2.25,2.25) rectangle (-1.75,1.75);
+\draw [fill=kthcolorPALE] (-2.25,1.25) rectangle (-1.75,0.75);
+\draw [fill=kthcolorPALE] (-2.25,-1.75) rectangle (-1.75,-2.25);
+\draw [fill=kthcolorPALE] (0.25,-1.75) rectangle (0.75,-2.25);
+\draw [fill=kthcolorPALE] (0.25,1.25) rectangle (0.75,0.75);
+\draw [fill=kthcolorPALE] (0.25,2.25) rectangle (0.75,1.75);
+\draw [fill=kthcolorPALE](-2.25,1.75) -- (-1.75,2.25) (-1.75,1.75)  -- (-2.25,2.25);
+\draw [fill=kthcolorPALE](-2.25,-1.75) -- (-1.75,-2.25) (-2.25,-2.25) -- (-1.75,-1.75);
+\draw [fill=kthcolorPALE](0.25,-1.75) -- (0.75,-2.25) (0.25,-2.25) -- (0.75,-1.75);
+\draw [fill=kthcolorPALE](0.25,1.25) -- (0.75,0.75) (0.25,0.75) -- (0.75,1.25);
+\draw [fill=kthcolorPALE](-2.25,1.25) -- (-1.75,0.75) (-2.25,0.75) -- (-1.75,1.25);
+\draw [fill=kthcolorPALE](0.25,2.25) -- (0.75,1.75) (0.25,1.75) -- (0.75,2.25);
+
+\node at (-1,4) {VDD};
+\node at (-1,-4) {VSS};
+\node at (2,-0.5) {Y};
+\node at (-3,-0.5) {A};
+
+
+\draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt}] (1,0.5) -- (1,2.5) node[midway, right, xshift=12pt] {PMOS};;
+\draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt}] (1,-2.5) -- (1,-1.5) node[midway, right, xshift=12pt] {NMOS};
+\end{tikzpicture}
