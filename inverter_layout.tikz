@@ -1,5 +1,4 @@
 \begin{tikzpicture}
-
 \filldraw [kthcolorBLUE!80] (-3.5,4.5) rectangle (2.5,3.5);
 \filldraw [kthcolorBLUE!80] (-2.5,3.5) rectangle (-1.5,2.5) node (v1) {};
 \filldraw [kthcolorGREEN] (-2.5,2.5) rectangle (-1.5,0.5);
@@ -33,12 +32,13 @@
 \draw [fill=kthcolorPALE](-2.25,1.25) -- (-1.75,0.75) (-2.25,0.75) -- (-1.75,1.25);
 \draw [fill=kthcolorPALE](0.25,2.25) -- (0.75,1.75) (0.25,1.75) -- (0.75,2.25);
 
+\draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
+(1,0.5) -- (1,2.5) node[midway,right,  xshift=15pt] {PMOS};
+\draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
+(1,-2.5) -- (1,-1.5) node[midway,right,  xshift=15pt] {NMOS};
+
 \node at (-1,4) {VDD};
 \node at (-1,-4) {VSS};
 \node at (2,-0.5) {Y};
 \node at (-3,-0.5) {A};
-
-
-\draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt}] (1,0.5) -- (1,2.5) node[midway, right, xshift=12pt] {PMOS};;
-\draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt}] (1,-2.5) -- (1,-1.5) node[midway, right, xshift=12pt] {NMOS};
 \end{tikzpicture}

@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+  \begin{scope}
+    \clip (-1,0) rectangle (11,-6);
+    \filldraw [fill=kthcolorGRAY!40,decorate, decoration={random steps,segment length=5pt,amplitude=3pt}] (0,1)--++(0,-1)--++(0,-4)--++(10,0)--++(0,5)--++(0,1)--cycle;
+    \fill[fill=kthcolorRED] (3.5,0)--++(0,-.3)--(6.5,-.15)--++(0,0.15)--cycle;
+    \filldraw [fill=kthcolorRED!40,rounded corners] (1.5,1)--++(0,-2)--++(2,0)--++(0,2)--cycle;
+    \filldraw [fill=kthcolorRED!40,rounded corners] (6.5,1)--++(0,-2)--++(2,0)--++(0,2)--cycle;
+    \node at (2.5,-0.5) {n+};
+    \node at (7.5,-0.5) {n+};
+    \node at (5,-2.5) {p};
+  \end{scope}
+  \filldraw[fill=kthcolorGREEN] (3,0)--++(4,0)--++(0,.3)--++(-4,0)--cycle;
+  \begin{scope}
+    \clip (0,0.3) rectangle ++(10,4);
+    \filldraw[rounded corners, fill=kthcolorBLUE!80] (3,-1)--++(4,0)--++(0,2.5)--++(-4,0)--cycle;
+  \end{scope}
+  \draw (0,0) -- (10,0) (3,0.3)--++(4,0);
+  \draw [latex-] (6,0.15) to[in=180,out=60] (8,1) node[right] {Oxide};
+  \draw [latex-] (4,-.15) to[out=130,in=0] (2,1) node [left] {Channel};
+  \node at (5,1) {Metal};
+  \draw[-o](2.5,-.2)--++(0,.5)--++(-2,0) node[left] {Drain};
+  \draw[-o](7.5,-.2)--++(0,.5)--++(2,0) node[right] {Source};
+  \draw[-o](5,1.2)--++(0,1) node[above] {Gate};
+  \draw[-o](5,-3.5)--++(0,-1) node[below]{Bulk};
+\end{tikzpicture}

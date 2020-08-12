@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+
+\node [draw=kthcolorBLUE, circle, inner sep=1.5em] at (0,0) (en) {$\sum_i w_ix_i+b$};
+\draw (en.north) node[below, yshift=-1ex] {\color{kthcolorBLUE}Cell body};
+\draw [draw=kthcolorBLUE] (en.north east) -- (en.south east) node[midway, right] {$f$};
+\draw[latex-] (en.west) --++ (-2,0) node[midway, above] {$w_1x_1$};
+\path[latex-] (en.north west) --++ (-2,1)  coordinate (e) node[pos=0.2, above] {$w_0x_0$};
+\draw[latex-] (en.south west) --++ (-2,-1) node[midway, above] {$w_2x_2$};
+\draw[kthcolorGREEN, latex-] (en.north west) --++ (-2,1)  coordinate (e) node[midway, below, xshift=-2ex] {dentrite};
+\draw (e) node [fill=kthcolorRED, circle] (syn) {} (e) node[above, yshift=0.5ex] {$w_0$} (e) node[right, xshift=1ex] {\color{kthcolorRED}synapse};
+\draw[kthcolorPALE, latex-] (syn.west) --++ (-2,0) node[midway, below, align=center] {axon from\\a neuron};
+\draw[kthcolorPALE,-latex] (en.east) --++ (3,0) node[below, midway, align=center] {output axon};
+\path[-latex] (en.east) --++ (3,0) node[midway, above] {$f\left( \sum_i w_ix_i+b \right)$};
+\draw[latex-] (en.350) --++ (2,-1) node[below] {activation function};
+\end{tikzpicture}

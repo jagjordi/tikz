@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+\draw (3.5,-1) -- (5,-1) -- (5, -2) to[C, l_=$C\subb{g}$] (5,-4);
+\draw (7,-4) to[R, -*, l=$R\subb{NMOS}$] (7,-2);
+\draw (9,-4) to[C, l=$C\subb{d}$] (9,-2) -- (9,-1) -- (11,-1);
+\draw (5,-4) to[short, -*,] (7,-4) -- (9,-4);
+\draw (7,-4) -- (7,-4.5) node[ground] {};
+\draw (7,-1) to[short, -*] (9,-1);
+\draw (7,-1.5) to[short, o-o] (7,-0.5);
+\draw (7,-2) -- (6.5,-1.5) (6.5,-0.5) -- (7,0);
+\draw [thick, densely dotted, -latex] (5,-1) -- (6,-1) -- (6,-1.75) -- (6.5,-1.75);
+\draw [thick, densely dotted, -latex] (6,-1) -- (6,-0.25) -- (6.5,-0.25);
+\draw (7,0) to[R, *-, l=$R\subb{PMOS}$] (7,2);
+\draw (7,2) -- (7,2.5) node[vcc] {};
+\draw [dotted, rounded corners=10pt] (4,2.5) rectangle (10,-4.5);
+\node [osquarepole] at (4,-1) {};
+\node [osquarepole] at (7,-4.5) {};
+\node [osquarepole] at (10,-1) {};
+\node [osquarepole] at (7,2.5) {};
+\draw (11,-1) -- (11,-2) to[C, l_=$C\subb{L}$] (11,-4) -- (11,-4.5) node[ground]{};
+\draw (11.5,-1) to[short,-*] (11,-1);
+\end{tikzpicture}

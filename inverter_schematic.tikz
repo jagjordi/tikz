@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+\node [pmos] (pmos) at (6,2) {};
+\node [nmos] (nmos) at (6,-1) {};
+\draw (nmos.G) --++ (-0.5,0) coordinate(en) |- (pmos.G);
+\draw ($0.5*(en) + 0.5*(en|-pmos.G)$) to[short, *-] ++(-1,0) node[left] (A) {A};
+\draw (nmos.D) -- (pmos.D);
+\draw ($0.5*(nmos.D) + 0.5*(pmos.D)$) to[short,*-] ++ (1,0) node[right] (Y) {Y};
+\draw (nmos.S) --++ (0,-0.75) node[circ] (vss) {};
+\draw (pmos.S) --++ (0,0.75) node[circ] (vdd) {};
+
+\draw (A|-vdd) -- (vdd-|Y) node[pos=0.4, above] {VDD};
+\draw (A|-vss) -- (vss-|Y)  node[pos=0.4, below] {VSS};
+
+\end{tikzpicture}

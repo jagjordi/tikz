@@ -1,0 +1,5 @@
+\begin{tikzpicture}
+  \node[american not port](inv){};
+  \draw (inv.in) --++ (-0.5,0) node[left] {A};
+  \draw (inv.out) --++ (0.5,0) node[right] {Y};
+\end{tikzpicture}
