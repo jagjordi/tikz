@@ -1,0 +1,27 @@
+\documentclass{standalone}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        xlabel={Year},
+        legend pos=north west,
+        grid=both,
+        ymode=log,
+        legend cell align=left,
+        xticklabel style={/pgf/number format/1000 sep=},
+        ]
+
+        \addplot[color=blue,only marks,mark=*] table [x=core_year,      y=core,      col sep=comma] {compute_scaling.csv};
+        \addplot[color=red,only marks,mark=*] table [x=frequency_year, y=frequency, col sep=comma] {compute_scaling.csv};
+        \addplot[color=orange,only marks,mark=*] table [x=watt_year,      y=watt,      col sep=comma] {compute_scaling.csv};
+        \addplot[only marks,mark=*] table [x=specint_year,   y=specint,   col sep=comma] {compute_scaling.csv};
+
+
+        \legend{Core count, Frequency (MHz), Power (W), SPECint (k)}
+    \end{axis}
+\end{tikzpicture}
+\end{document}
+
