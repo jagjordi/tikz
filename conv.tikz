@@ -1,0 +1,80 @@
+\documentclass{beamer}
+\usepackage{tikz}
+\usepackage{adjustbox}
+
+\definecolor{white}{RGB}{255, 255, 255}
+\definecolor{sand}{RGB}{235, 229, 224}
+\definecolor{kth_blue}{RGB}{0, 71, 145}
+\definecolor{sky_blue}{RGB}{98, 152, 210}
+\definecolor{navy}{RGB}{0, 0, 97}
+\definecolor{light_blue}{RGB}{222, 240, 255}
+\definecolor{digital_blue}{RGB}{0, 41, 237}
+\definecolor{broken_black}{RGB}{33, 33, 33}
+\definecolor{broken_white}{RGB}{252, 252, 252}
+\definecolor{dark_green}{RGB}{13, 74, 33}
+\definecolor{green}{RGB}{77, 160, 97}
+\definecolor{light_green}{RGB}{199, 235, 186}
+\definecolor{dark_turquoise}{RGB}{28, 67, 76}
+\definecolor{turquoise}{RGB}{51, 156, 156}
+\definecolor{light_turquoise}{RGB}{178, 224, 224}
+\definecolor{dark_brick}{RGB}{120, 0, 26}
+\definecolor{brick}{RGB}{232, 106, 88}
+\definecolor{light_brick}{RGB}{255, 204, 196}
+\definecolor{dark_yellow}{RGB}{166, 89, 0}
+\definecolor{yellow}{RGB}{255, 190, 0}
+\definecolor{light_yellow}{RGB}{255, 240, 176}
+\definecolor{dark_grey}{RGB}{50, 50, 50}
+\definecolor{grey}{RGB}{165, 165, 165}
+\definecolor{light_grey}{RGB}{230, 230, 230}
+
+\newcommand{\dd}{1}
+\newcommand{\imapwidth}{8}
+\newcommand{\imapheight}{8}
+\newcommand{\kernelwidth}{3}
+\newcommand{\kernelheight}{3}
+\newcommand{\omapwidth}{6}
+\newcommand{\omapheight}{6}
+
+
+\begin{document}
+\begin{frame}
+
+\begin{adjustbox}{max height=\textheight, max width=\textwidth}
+\begin{tikzpicture}
+
+    \foreach \x in {1,...,\imapwidth} {
+        \foreach \y in {1,...,\imapheight} {
+            % \ifnum \y=1
+                % \node[draw, rectangle, minimum size=\dd cm, fill=light_yellow] at (\x, -\y) (im\x_\y) {};
+            % \else
+                \node[draw, rectangle, minimum size=\dd cm, fill=light_blue] at (\x, -\y) (im\x_\y) {};
+            % \fi
+        }
+    }
+
+    \foreach \x in {1,...,\omapwidth} {
+        \foreach \y in {1,...,\omapheight} {
+            \node[draw, rectangle, minimum size=\dd cm, fill=light_green] at (\x + \imapwidth + 1, -\y) (om\x_\y) {};
+        }
+    }
+
+    % animate the kernel moving over the input map using visible on
+    \foreach \x in {1,...,\omapwidth} {
+        \foreach \y in {1,...,\omapheight} {
+            \pgfmathtruncatemacro{\visibleon}{\x+(\y-1)*\omapheight}
+            \visible<\visibleon>{
+                \node[draw, rectangle, minimum size=\dd cm, fill=green] at (\x + \imapwidth + 1, -\y) (om\x_\y) {};
+                \foreach \i in {1,...,\kernelwidth} {
+                    \foreach \j in {1,...,\kernelheight} {
+                        \node[draw, rectangle, minimum size=\dd cm, fill=sky_blue] at (\x + \i - 1, -\y - \j + 1) (k\i_\j) {};
+                    }
+                }
+            }
+        }
+    }
+
+\end{tikzpicture}
+\end{adjustbox}
+\end{frame}
+\end{document}
+
